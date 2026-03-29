@@ -1,21 +1,34 @@
-export default {
-  title: "IcedLuauDocs", // Change this to your project name
-  description: "meow",
+import { defineConfig } from 'vitepress'
+
+// https://vitepress.dev/reference/site-config
+export default defineConfig({
+  title: "IcedLuau Documentation",
+  description: "Very epic and awesome docs",
   themeConfig: {
+    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Examples', link: '/markdown-examples' }
     ],
+
     sidebar: [
       {
-        text: 'placeholder stuff',
+        text: 'Examples',
         items: [
-          { text: 'Quick Start', link: '/index' },
-          { text: 'Installation', link: '/install' }
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' }
         ]
-      }
+      },
     ],
+
+    notFound: {
+        title: 'not found!',
+        quote: 'attempt to index nil with <page>',
+        linkText: 'return home'
+    },
+
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/IcedLua/' }
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
   }
-}
+})
