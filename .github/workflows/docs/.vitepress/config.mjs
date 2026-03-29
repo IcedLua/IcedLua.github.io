@@ -1,13 +1,13 @@
 export default {
-  title: "My Project Docs", // Change this to your project name
-  description: "Documentation for my cool project",
+  title: "IcedLuauDocs", // Change this to your project name
+  description: "meow",
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
     ],
     sidebar: [
       {
-        text: 'Getting Started',
+        text: 'placeholder stuff',
         items: [
           { text: 'Quick Start', link: '/index' },
           { text: 'Installation', link: '/install' }
@@ -15,7 +15,7 @@ export default {
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/YOUR_USERNAME/YOUR_REPO' }
+      { icon: 'github', link: 'https://github.com/IcedLua/' }
     ]
   }
 }
