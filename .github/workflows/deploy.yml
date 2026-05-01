@@ -14,6 +14,10 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: docs
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,27 +26,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: pnpm-setup
+        uses: pnpm/action-setup@v2
         with:
-          node-version: 20
-          # This will cache your node_modules for faster builds
-          cache: 'npm'
-          cache-dependency-path: docs/package-lock.json
-
+          version: latest
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: npm install
-        working-directory: docs
-
+        run: pnpm install
       - name: Build Docs
-        run: npm run docs:build
-        working-directory: docs
-
+        run: pnpm run docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Point to where VitePress outputs the static site
           path: docs/.vitepress/dist
 
   deploy:
