@@ -23,7 +23,7 @@ export default defineConfig({
 
     notFound: {
         title: 'not found!',
-        quote: 'attempt to index nil with <page>',
+        quote: 'attempt to index nil with GET',
         linkText: 'return home'
     },
 
